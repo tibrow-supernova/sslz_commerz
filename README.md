@@ -41,7 +41,8 @@ This module integrates SSLCommerz, a popular payment gateway primarily used in B
    - **Store Password:** Your SSLCommerz Store Password
    - **State:** Enable to activate (securepay) or Test to activate (sandbox) the provider
    - **Configuration:** Go Enable Payment Methods > Card (Enable it)
-   - Then save & publish it
+   - Then **save & publish** it
+   - Activate **BDT** currency
 
 ### Getting SSLCommerz Credentials
 
