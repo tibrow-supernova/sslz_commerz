@@ -15,7 +15,7 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'payment_sslcommerz/static/src/js/payment_form.js',
+            'payment_sslcommerz_sidslab/static/src/js/payment_form.js',
         ],
     },
     'post_init_hook': '_sslcommerz_post_init_hook',
