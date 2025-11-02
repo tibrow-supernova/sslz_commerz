@@ -1,7 +1,8 @@
 SSLCommerz Payment Acquirer
-Version: 18.0.1.0.0  
-Author: Md Sidratul Muntaher Tibrow 
-Email: msm.tibrow@gmail.com
+
+- Version: 18.0.1.0.0
+- Author: Md Sidratul Muntaher Tibrow
+- Email: msm.tibrow@gmail.com
 
 Description
 This module integrates the SSLCommerz payment gateway (widely used in Bangladesh) with Odoo, enabling secure online payment processing for e-commerce websites.
