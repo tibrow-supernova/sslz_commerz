@@ -4,7 +4,6 @@
     'category': 'Accounting/Payment Acquirers',
     'summary': 'Payment Acquirer: SSLCommerz Implementation',
     'author': 'Md Sidratul Muntaher Tibrow',
-    'website': 'https://github.com/tibrow-supernova',
     'depends': ['payment', 'website_sale'],
     'images': ['static/description/icon.png'],
     'data': [
@@ -22,6 +21,6 @@
     'uninstall_hook': '_sslcommerz_uninstall_hook',
     'license': 'LGPL-3',
     'application': True,
-    'price': 180.0,
+    'price': 50.0,
     'currency': 'USD',
 }
