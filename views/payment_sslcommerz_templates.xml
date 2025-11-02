@@ -1,0 +1,10 @@
+<odoo>
+    <template id="redirect_form" name="SSLCommerz Redirect Form">
+        <form t-att-action="api_url" method="get" id="sslcommerz_redirect_form">
+            <p>You will be redirected to the SSLCommerz payment page...</p>
+        </form>
+        <script type="text/javascript">
+            document.getElementById('sslcommerz_redirect_form').submit();
+        </script>
+    </template>
+</odoo>

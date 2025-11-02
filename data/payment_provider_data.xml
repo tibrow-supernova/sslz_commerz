@@ -1,0 +1,16 @@
+<odoo>
+    <data noupdate="1">
+        <record id="payment_provider_sslcommerz" model="payment.provider">
+            <field name="name">SSLCommerz</field>
+            <field name="code">sslcommerz</field>
+            <field name="redirect_form_view_id" ref="payment_sslcommerz.redirect_form"/>
+            <field name="module_id" ref="base.module_payment_sslcommerz"/>
+            <field name="payment_method_ids" eval="[(6, 0, [ref('payment.payment_method_card')])]"/>
+            <field name="allow_tokenization">False</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sslcommerz_store_id">test_store_id</field>
+            <field name="sslcommerz_store_password">test_store_password</field>
+            <field name="state">disabled</field>
+        </record>
+    </data>
+</odoo>
