@@ -105,6 +105,12 @@ class SslcommerzPaymentTransaction(models.Model):
                 return
             self.provider_reference = notification_data.get('val_id')
             self._set_done()
+
+            if self.sale_order_ids:
+                for order in self.sale_order_ids:
+                    if order.state in ['draft', 'sent']:
+                        order.action_confirm()
+
         elif status == 'FAILED':
             self._set_canceled(_("Payment failed."))
         elif status == 'CANCELLED':
