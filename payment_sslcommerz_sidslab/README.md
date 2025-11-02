@@ -1,100 +1,106 @@
-# SSLCommerz Payment Acquirer
 
-**Version:** 18.0.1.0.0  
-**Author:** Md Sidratul Muntaher Tibrow  
+## SSLCommerz Payment Acquirer
+
+**Version:** 18.0.1.0.0 <br>
+**Author:** Md Sidratul Muntaher Tibrow<br>
 **Email:** `msm.tibrow@gmail.com`
 
 ## Description
 
-This module integrates SSLCommerz, a popular payment gateway primarily used in Bangladesh, with Odoo. SSLCommerz enables secure online payment processing for e-commerce websites.
+This module integrates the SSLCommerz payment gateway (widely used in Bangladesh) with Odoo, enabling secure online payment processing for e-commerce websites.
 
 ## Features
 
-- Integration with SSLCommerz payment gateway
-- Support for both sandbox and production environments
-- Secure payment processing
-- Support for credit/debit card payments
-- Easy configuration with store ID and password
+* Integration with SSLCommerz payment gateway
+* Support for both sandbox and production environments
+* Secure payment processing
+* Credit/debit card payments support
+* Easy configuration with a Store ID and password
 
 ## Installation
 
-1. **Copy the module** to your Odoo custom addons directory:
-
-2. **Update the app list** in Odoo:
-   - restart odoo
-   - Go to Apps > Update Apps List
-
-3. **Install the module**:
-   - Remove all filter from searchbar 
-   - Search for "SSLCommerz Payment Acquirer" in the Apps menu 
-   - Click Install
-   - Also you need to activate website/ecommerce to use this sslcommerz package
+1. Copy the module into your Odoo custom addons directory.
+2. Restart Odoo.
+3. In Odoo go to **Apps → Update Apps List**.
+4. Remove all filters in the Apps search bar.
+5. Search for “SSLCommerz Payment Acquirer”.
+6. Click **Install**.
+7. Ensure Website/Ecommerce module is activated to use this package.
 
 ## Configuration
 
-1. Go to **Settings > Website > Shop - Payment > Activate Payments > view alternative**
-2. Find and click on **SSLCommerz**
-3. Set the following parameters:
-   - **Name:** SSLCommerz (or your preferred name)
-   - **Provider:** SSLCommerz
-   - **Store ID:** Your SSLCommerz Store ID
-   - **Store Password:** Your SSLCommerz Store Password
-   - **State:** Enable to activate (securepay) or Test to activate (sandbox) the provider
-   - **Configuration:** Go Enable Payment Methods > Card (Enable it)
-   - Then **save & publish** it
-   - Activate **BDT** currency
+1. Go to **Settings → Website → Shop – Payment → Activate Payments → View Alternative**.
+2. Select “SSLCommerz”.
+3. Set up the following:
 
-### Getting SSLCommerz Credentials
+   * **Name**: SSLCommerz (or your preferred name)
+   * **Provider**: SSLCommerz
+   * **Store ID**: Your SSLCommerz Store ID
+   * **Store Password**: Your SSLCommerz Store Password
+   * **State**: Choose “Enable” (production) or “Test” (sandbox)
+   * Enable **Card** under Payment Methods → Save & Publish
+   * Activate **BDT** currency
 
-1. Register at SSLCommerz merchant portal
-2. After approval, you will receive your Store ID and Store Password
-3. For testing, you can use sandbox credentials provided by SSLCommerz
+## Getting SSLCommerz Credentials
+
+1. Register at the SSLCommerz merchant portal and wait for approval.
+2. Once approved you will receive your Store ID and Store Password.
+3. For testing, use the sandbox credentials provided by SSLCommerz.
 
 ## Usage
 
-Once configured, customers will be able to select SSLCommerz as a payment method during checkout. The payment flow works as follows:
+After configuration:
 
-1. Customer selects SSLCommerz as payment method
-2. Customer is redirected to SSLCommerz secure payment page
-3. Customer enters payment details and completes payment
-4. Customer is redirected back to your website with payment confirmation
-5. Payment status is automatically updated in Odoo
+1. Customer selects SSLCommerz as payment method during checkout.
+2. Customer is redirected to the SSLCommerz secure payment page.
+3. Customer enters payment details and completes payment.
+4. Customer is redirected back to your website with a payment confirmation.
+5. Payment status is automatically updated in Odoo.
 
 ## Supported Payment Methods
 
-- Credit Cards (Visa, MasterCard, Amex)
-- Debit Cards
-- Mobile Banking (bKash, Nagad, Rocket, etc.)
-
-- Other methods supported by SSLCommerz
+* Credit Cards (Visa, MasterCard, Amex)
+* Debit Cards
+* Mobile Banking (bKash, Nagad, Rocket, etc.)
+* Other methods supported by SSLCommerz
 
 ## Security
 
-- All payment data is processed securely on SSLCommerz servers
-- PCI DSS compliant payment processing
-- Encrypted communication between Odoo and SSLCommerz
+* All payment data is processed securely on SSLCommerz servers.
+* Payment processing is PCI DSS compliant.
+* Communication between Odoo and SSLCommerz is encrypted.
 
 ## Troubleshooting
 
 **Issue:** Payment not redirecting properly
-- Check your store credentials are correct
-- Ensure your SSLCommerz account is in the correct environment (sandbox/production)
+
+* Ensure your store credentials are correct.
+* Confirm your SSLCommerz account is in the correct environment (sandbox vs. production).
 
 **Issue:** Payment status not updating
-- Check Odoo server can receive webhook notifications from SSLCommerz
-- Verify your server allows incoming connections on the required ports
+
+* Ensure Odoo server can receive webhook notifications from SSLCommerz.
+* Verify your server allows required incoming connections and ports.
 
 ## Support
 
-For support and further information:
-- Check the SSLCommerz official documentation
-- Contact your SSLCommerz account manager
-- Consult with your Odoo implementation partner
+* Check SSLCommerz official documentation.
+* Contact your SSLCommerz account manager.
+* Consult with your Odoo implementation partner.
 
 ## License
 
-This module is licensed under LGPL-3.
+This module is licensed under **LGPL-3**.
 
 ## Credits
 
-This module was developed to provide seamless integration between Odoo and SSLCommerz payment gateway for businesses operating in markets where SSLCommerz is a preferred payment method.
+Developed to provide seamless integration between Odoo and SSLCommerz payment gateway for businesses operating in markets where SSLCommerz is a preferred payment method.
+
+---
+
+If you like, I can generate **badge links**, **version compatibility tables**, and **minimum requirement sections** (per OCA’s best practice) so your README is fully OCA-compliant. Would you like that?
+
+[1]: https://odoo-community.org/read-me-guidelines "
+        Read Me Guidelines | 
+        The Odoo Community Association | OCA
+      "
