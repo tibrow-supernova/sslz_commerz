@@ -21,4 +21,7 @@
     'post_init_hook': '_sslcommerz_post_init_hook',
     'uninstall_hook': '_sslcommerz_uninstall_hook',
     'license': 'LGPL-3',
+    'application': True,
+    'price': 180.0,
+    'currency': 'USD',
 }
