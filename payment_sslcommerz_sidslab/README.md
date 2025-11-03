@@ -1,283 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSLCommerz Payment Acquirer</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 2.2em;
-        }
-        
-        .version-info {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-top: 8px;
-        }
-        
-        .author {
-            font-style: italic;
-            margin-top: 5px;
-            font-size: 0.95em;
-        }
-        
-        .container {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #667eea;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 8px;
-            margin-top: 25px;
-        }
-        
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
-        }
-        
-        ul, ol {
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
-        }
-        
-        .feature-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .step {
-            background: #e9ecef;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 10px 0;
-            border-left: 4px solid #28a745;
-        }
-        
-        .config-step {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 10px 0;
-            border-left: 4px solid #ffc107;
-        }
-        
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .payment-tag {
-            background: #d4edda;
-            color: #155724;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        
-        .troubleshooting {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 6px;
-        }
-        
-        .troubleshooting h4 {
-            color: #856404;
-            margin-top: 0;
-        }
-        
-        .security-note {
-            background: #d1ecf1;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #17a2b8;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #dee2e6;
-            color: #6c757d;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>SSLCommerz Payment Acquirer</h1>
-        <div class="version-info"><strong>Version:</strong> 18.0.1.0.0</div>
-        <div class="author">By Md Sidratul Muntaher Tibrow (msm.tibrow@gmail.com)</div>
-    </div>
-    
-    <div class="container">
-        <h2>Description</h2>
-        <p>This module integrates SSLCommerz, a popular payment gateway primarily used in Bangladesh, with Odoo. SSLCommerz enables secure online payment processing for e-commerce websites.</p>
-        
-        <h2>Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <strong>Payment Gateway</strong>
-                <p>Integration with SSLCommerz payment gateway</p>
-            </div>
-            <div class="feature-card">
-                <strong>Environment Support</strong>
-                <p>Support for both sandbox and production environments</p>
-            </div>
-            <div class="feature-card">
-                <strong>Secure Processing</strong>
-                <p>Secure payment processing</p>
-            </div>
-            <div class="feature-card">
-                <strong>Card Support</strong>
-                <p>Support for credit/debit card payments</p>
-            </div>
-        </div>
-        <div class="feature-card">
-            <strong>Easy Configuration</strong>
-            <p>Easy configuration with store ID and password</p>
-        </div>
-        
-        <h2>Installation</h2>
-        <div class="step">
-            <strong>1. Copy the module</strong><br>
-            Copy the module to your Odoo custom addons directory
-        </div>
-        <div class="step">
-            <strong>2. Update the app list</strong><br>
-            - Restart Odoo<br>
-            - Go to Apps > Update Apps List
-        </div>
-        <div class="step">
-            <strong>3. Install the module</strong><br>
-            - Remove all filter from searchbar<br>
-            - Search for "SSLCommerz Payment Acquirer" in the Apps menu<br>
-            - Click Install<br>
-            - Also you need to activate website/ecommerce to use this sslcommerz package
-        </div>
-        
-        <h2>Configuration</h2>
-        <div class="config-step">
-            <strong>1. Go to:</strong> Settings > Website > Shop - Payment > Activate Payments > view alternative
-        </div>
-        <div class="config-step">
-            <strong>2. Find and click on:</strong> SSLCommerz
-        </div>
-        <div class="config-step">
-            <strong>3. Set the following parameters:</strong><br>
-            - <strong>Name:</strong> SSLCommerz (or your preferred name)<br>
-            - <strong>Provider:</strong> SSLCommerz<br>
-            - <strong>Store ID:</strong> Your SSLCommerz Store ID<br>
-            - <strong>Store Password:</strong> Your SSLCommerz Store Password<br>
-            - <strong>State:</strong> Enable to activate (securepay) or Test to activate (sandbox) the provider<br>
-            - <strong>Configuration:</strong> Go Enable Payment Methods > Card (Enable it)<br>
-            - Then <strong>save & publish</strong> it<br>
-            - Activate <strong>BDT</strong> currency
-        </div>
-        <h3>Getting SSLCommerz Credentials</h3>
-        <ol>
-            <li>Register at SSLCommerz merchant portal</li>
-            <li>After approval, you will receive your Store ID and Store Password</li>
-            <li>For testing, you can use sandbox credentials provided by SSLCommerz</li>
-        </ol>
-        
-        <h2>Usage</h2>
-        <p>Once configured, customers will be able to select SSLCommerz as a payment method during checkout. The payment flow works as follows:</p>
-        <ol>
-            <li>Customer selects SSLCommerz as payment method</li>
-            <li>Customer is redirected to SSLCommerz secure payment page</li>
-            <li>Customer enters payment details and completes payment</li>
-            <li>Customer is redirected back to your website with payment confirmation</li>
-            <li>Payment status is automatically updated in Odoo</li>
-        </ol>
-        
-        <h2>Supported Payment Methods</h2>
-        <div class="payment-methods">
-            <span class="payment-tag">Credit Cards (Visa, MasterCard, Amex)</span>
-            <span class="payment-tag">Debit Cards</span>
-            <span class="payment-tag">Mobile Banking (bKash, Nagad, Rocket, etc.)</span>
-            <span class="payment-tag">Other SSLCommerz methods</span>
-        </div>
-        
-        <h2>Security</h2>
-        <div class="security-note">
-            <ul>
-                <li>All payment data is processed securely on SSLCommerz servers</li>
-                <li>PCI DSS compliant payment processing</li>
-                <li>Encrypted communication between Odoo and SSLCommerz</li>
-            </ul>
-        </div>
-        
-        <h2>Troubleshooting</h2>
-        <div class="troubleshooting">
-            <h4>Issue: Payment not redirecting properly</h4>
-            <ul>
-                <li>Check your store credentials are correct</li>
-                <li>Ensure your SSLCommerz account is in the correct environment (sandbox/production)</li>
-            </ul>
-            
-            <h4>Issue: Payment status not updating</h4>
-            <ul>
-                <li>Check Odoo server can receive webhook notifications from SSLCommerz</li>
-                <li>Verify your server allows incoming connections on the required ports</li>
-            </ul>
-        </div>
-        
-        <h2>Support</h2>
-        <p>For support and further information:</p>
-        <ul>
-            <li>Check the SSLCommerz official documentation</li>
-            <li>Contact your SSLCommerz account manager</li>
-            <li>Consult with your Odoo implementation partner</li>
-        </ul>
-        
-        <h2>License</h2>
-        <p>This module is licensed under LGPL-3.</p>
-        
-        <h2>Credits</h2>
-        <p>This module was developed to provide seamless integration between Odoo and SSLCommerz payment gateway for businesses operating in markets where SSLCommerz is a preferred payment method.</p>
-        
-        <div class="footer">
-            SSLCommerz Payment Acquirer Module - Odoo Integration
-        </div>
-    </div>
-</body>
-</html>
+<h1>SSLCommerz Payment Acquirer</h1>
+
+<p><strong>Version:</strong> 18.0.1.0.0<br>
+<strong>Author:</strong> Md Sidratul Muntaher Tibrow<br>
+<strong>Email:</strong> <code>msm.tibrow@gmail.com</code></p>
+
+<h2>Description</h2>
+
+<p>This module integrates SSLCommerz, a popular payment gateway primarily used in Bangladesh, with Odoo. SSLCommerz enables secure online payment processing for e-commerce websites.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Integration with SSLCommerz payment gateway</li>
+<li>Support for both sandbox and production environments</li>
+<li>Secure payment processing</li>
+<li>Support for credit/debit card payments</li>
+<li>Easy configuration with store ID and password</li>
+</ul>
+
+<h2>Installation</h2>
+
+<ol>
+<li><strong>Copy the module</strong> to your Odoo custom addons directory:</li>
+
+<li><strong>Update the app list</strong> in Odoo:
+   <ul>
+   <li>restart odoo</li>
+   <li>Go to Apps > Update Apps List</li>
+   </ul></li>
+
+<li><strong>Install the module</strong>:
+   <ul>
+   <li>Remove all filter from searchbar</li>
+   <li>Search for "SSLCommerz Payment Acquirer" in the Apps menu</li>
+   <li>Click Install</li>
+   <li>Also you need to activate website/ecommerce to use this sslcommerz package</li>
+   </ul></li>
+</ol>
+
+<h2>Configuration</h2>
+
+<ol>
+<li>Go to <strong>Settings > Website > Shop - Payment > Activate Payments > view alternative</strong></li>
+<li>Find and click on <strong>SSLCommerz</strong></li>
+<li>Set the following parameters:
+   <ul>
+   <li><strong>Name:</strong> SSLCommerz (or your preferred name)</li>
+   <li><strong>Provider:</strong> SSLCommerz</li>
+   <li><strong>Store ID:</strong> Your SSLCommerz Store ID</li>
+   <li><strong>Store Password:</strong> Your SSLCommerz Store Password</li>
+   <li><strong>State:</strong> Enable to activate (securepay) or Test to activate (sandbox) the provider</li>
+   <li><strong>Configuration:</strong> Go Enable Payment Methods > Card (Enable it)</li>
+   <li>Then <strong>save &amp; publish</strong> it</li>
+   <li>Activate <strong>BDT</strong> currency</li>
+   </ul></li>
+</ol>
+
+<h3>Getting SSLCommerz Credentials</h3>
+
+<ol>
+<li>Register at SSLCommerz merchant portal</li>
+<li>After approval, you will receive your Store ID and Store Password</li>
+<li>For testing, you can use sandbox credentials provided by SSLCommerz</li>
+</ol>
+
+<h2>Usage</h2>
+
+<p>Once configured, customers will be able to select SSLCommerz as a payment method during checkout. The payment flow works as follows:</p>
+
+<ol>
+<li>Customer selects SSLCommerz as payment method</li>
+<li>Customer is redirected to SSLCommerz secure payment page</li>
+<li>Customer enters payment details and completes payment</li>
+<li>Customer is redirected back to your website with payment confirmation</li>
+<li>Payment status is automatically updated in Odoo</li>
+</ol>
+
+<h2>Supported Payment Methods</h2>
+
+<ul>
+<li>Credit Cards (Visa, MasterCard, Amex)</li>
+<li>Debit Cards</li>
+<li>Mobile Banking (bKash, Nagad, Rocket, etc.)</li>
+<li>Other methods supported by SSLCommerz</li>
+</ul>
+
+<h2>Security</h2>
+
+<ul>
+<li>All payment data is processed securely on SSLCommerz servers</li>
+<li>PCI DSS compliant payment processing</li>
+<li>Encrypted communication between Odoo and SSLCommerz</li>
+</ul>
+
+<h2>Troubleshooting</h2>
+
+<p><strong>Issue:</strong> Payment not redirecting properly</p>
+<ul>
+<li>Check your store credentials are correct</li>
+<li>Ensure your SSLCommerz account is in the correct environment (sandbox/production)</li>
+</ul>
+
+<p><strong>Issue:</strong> Payment status not updating</p>
+<ul>
+<li>Check Odoo server can receive webhook notifications from SSLCommerz</li>
+<li>Verify your server allows incoming connections on the required ports</li>
+</ul>
+
+<h2>Support</h2>
+
+<p>For support and further information:</p>
+<ul>
+<li>Check the SSLCommerz official documentation</li>
+<li>Contact your SSLCommerz account manager</li>
+<li>Consult with your Odoo implementation partner</li>
+</ul>
+
+<h2>License</h2>
+
+<p>This module is licensed under LGPL-3.</p>
+
+<h2>Credits</h2>
+
+<p>This module was developed to provide seamless integration between Odoo and SSLCommerz payment gateway for businesses operating in markets where SSLCommerz is a preferred payment method.</p>
